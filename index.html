@@ -6,7 +6,287 @@
   </head>
   <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>
+  <!--<p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>-->
 
+    <header>
+      <nav>
+        <a href="#">
+          <img src="#" width="163" height="35" alt="Логотип магазина Девайс">
+        </a>
+
+        <form name="search" method="post" action="https://echo.htmlacademy.ru">
+          <input type="search" name="searching" placeholder="Поиск по сайту">
+          <input type="submit">
+        </form>
+
+        <ul>
+          <li>
+            <a href="#">Войти</a>
+          </li>
+          <li>
+            <a href="#">Сравнить</a>
+          </li>
+          <li>
+            <a href="#">Корзина</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <a href="">Каталог товаров</a>
+            <ul>
+              <li>
+                <a href="#">Виртуальная реальность</a>
+              </li>
+              <li>
+                <a href="catalog.html">Моноподы для селфи</a>
+              </li>
+              <li>
+                <a href="#">Экшн-камеры</a>
+              </li>
+              <li>
+                <a href="#">Фитнес-браслеты</a>
+              </li>
+              <li>
+                <a href="#">Умные часы</a>
+              </li>
+              <li>
+                <a href="#">Квадрокоптер</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">Доставка</a>
+          </li>
+          <li>
+            <a href="">Гарантия</a>
+          </li>
+          <li>
+            <a href="">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Интернет-магазин Девайс</h1>
+      <section>
+        <h2>Слайдер промо-товаров</h2>
+        <ul>
+          <li id="slide_1">
+            <img src="#" width="384" height="486" alt="Палка для селфи">
+            <span>01</span>
+            <p>Делай селфи, как Бен Стиллер!</p>
+            <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+            <a href="#">Подробнее</a>
+            <table>
+              <tr>
+                <td>Длина палки</td>
+                <td>8,5 м</td>
+              </tr>
+              <tr>
+                <td>Вес палки</td>
+                <td>5 кг</td>
+              </tr>
+              <tr>
+                <td>Материал</td>
+                <td>Карбон</td>
+              </tr>
+            </table>
+          </li>
+          <li id="slide_2">
+            <img src="#" width="345" height="485" alt="Фитнесс-браслет">
+            <span>02</span>
+            <p>Худеем правильно!</p>
+            <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+            <a href="#">Подробнее</a>
+            <table>
+              <tr>
+                <td>Без подзарядки</td>
+                <td>48 часов</td>
+              </tr>
+            </table>
+          </li>
+          <li id="slide_3">
+            <img src="#" width="526" height="334" alt="Квадрокоптер">
+            <span>03</span>
+            <p>Порхает как бабочка, жалит как пчела!</p>
+            <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+            <a href="#">Подробнее</a>
+            <table>
+              <tr>
+                <td>Дальность полета</td>
+                <td>800 м</td>
+              </tr>
+              <tr>
+                <td>Радиус поражения</td>
+                <td>50 м</td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+        <div>
+          <input id="button_1" type="radio" name="slider_dots_item" checked>
+          <label for="button_1">Слайд 1</label>
+          <input id="button_2" type="radio" name="slider_dots_item">
+          <label for="button_2">Слайд 2</label>
+          <input id="button_3" type="radio" name="slider_dots_item">
+          <label for="button_3">Слайд 3</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Популярные товары</h2>
+        <ul>
+          <li>
+            <a href="#">Виртуальная реальность</a>
+          </li>
+          <li>
+            <a href="catalog.html">Моноподы для селфи</a>
+          </li>
+          <li>
+            <a href="#">Экшн-камеры</a>
+          </li>
+          <li>
+            <a href="#">Фитнес-браслеты</a>
+          </li>
+          <li>
+            <a href="#">Умные часы</a>
+          </li>
+          <li>
+            <a href="#">Квадрокоптер</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Наши сервисы</h2>
+        <ul>
+          <li>
+            <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+          </li>
+          <li>
+            <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
+          </li>
+          <li>
+            <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
+          </li>
+        </ul>
+        <div>
+          <input id="tab_slide_1" type="radio" name="tab_slider_item" checked>
+          <label for="tab_slide_1">Доставка</label>
+          <input id="tab_slide_2" type="radio" name="tab_slider_item">
+          <label for="tab_slide_2">Гарантия</label>
+          <input id="tab_slide_3" type="radio" name="tab_slider_item">
+          <label for="tab_slide_3">Кредит</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ведущие производители</h2>
+        <ul>
+          <li>
+            <a href="https://dji.com/ru">
+              <img src="#" width="260" height="100" alt="Производитель DGI">
+            </a>
+          </li>
+          <li>
+            <a href="https://sp-connect.com/">
+              <img src="#" width="260" height="100" alt="Производитель SP Gadgets">
+            </a>
+          </li>
+          <li>
+            <a href="https://gopro.ru/">
+              <img src="#" width="260" height="100" alt="Производитель GoPro">
+            </a>
+          </li>
+          <li>
+            <a href="https://vive.com/ru/">
+              <img src="#" width="260" height="100" alt="Производитель VIVE">
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Информация о компании</h2>
+        <div>
+          <h3>О нас</h3>
+          <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+          <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+          <ul>
+            <li>
+              <p>Деловые линии</p>
+            </li>
+            <li>
+              <p>Автотрейдинг</p>
+            </li>
+            <li>
+              <p>ЖелДорЭкспедиция</p>
+            </li>
+          </ul>
+          <a href="#">Подробнее о нас</a>
+        </div>
+        <div>
+          <h3>Контакты</h3>
+          <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
+          <img src="#" width="560" height="222" alt="Адрес офиса Санкт-Петербург, набережная реки Карповки, 5, литера П.">
+          <a href="#">Напишите нам</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <h2>Список ссылок для навигации по сайту</h2>
+        <a href="#">
+          <img src="#" width="163" height="35" alt="Логотип магазина Девайс">
+        </a>
+        <ul>
+          <li>
+            <a href="#">Войти</a>
+          </li>
+          <li>
+            <a href="#">Сравнить</a>
+          </li>
+          <li>
+            <a href="#">Корзина</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Контакты и сервисы</h2>
+        <p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+        <ul>
+          <li>
+            <a href="#">Доставка</a>
+          </li>
+          <li>
+            <a href="#">Гарантия</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+        <a href="tel:+78005558628">+7 800 555-86-28</a>
+      </div>
+      <div>
+        <h2>Социальные сети и разработка сайта</h2>
+        <ul>
+          <li>
+            <a href="#">Facebook</a>
+          </li>
+          <li>
+            <a href="#">Instagram</a>
+          </li>
+          <li>
+            <a href="#">Twitter</a>
+          </li>
+        </ul>
+        <a href="https://htmlacademy.ru">
+          <img src="#" width="115" height="33" alt="Логотип HTMLAcademy">
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
