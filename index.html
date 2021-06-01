@@ -16,20 +16,12 @@
 
         <form name="search" method="post" action="https://echo.htmlacademy.ru">
           <input type="search" name="searching" placeholder="Поиск по сайту">
-          <input type="submit">
+          <button type="submit">Найти</button>
         </form>
 
-        <ul>
-          <li>
-            <a href="#">Войти</a>
-          </li>
-          <li>
-            <a href="#">Сравнить</a>
-          </li>
-          <li>
-            <a href="#">Корзина</a>
-          </li>
-        </ul>
+        <a href="#">Войти</a>
+        <a href="#">Сравнить</a>
+        <a href="#">Корзина</a>
 
         <ul>
           <li>
@@ -73,7 +65,7 @@
       <section>
         <h2>Слайдер промо-товаров</h2>
         <ul>
-          <li id="slide_1">
+          <li>
             <img src="#" width="384" height="486" alt="Палка для селфи">
             <span>01</span>
             <p>Делай селфи, как Бен Стиллер!</p>
@@ -81,20 +73,18 @@
             <a href="#">Подробнее</a>
             <table>
               <tr>
-                <td>Длина палки</td>
+                <th>Длина палки</th>
+                <th>Вес палки</th>
+                <th>Материал</th>
+              </tr>
+              <tr>
                 <td>8,5 м</td>
-              </tr>
-              <tr>
-                <td>Вес палки</td>
                 <td>5 кг</td>
-              </tr>
-              <tr>
-                <td>Материал</td>
                 <td>Карбон</td>
               </tr>
             </table>
           </li>
-          <li id="slide_2">
+          <li>
             <img src="#" width="345" height="485" alt="Фитнесс-браслет">
             <span>02</span>
             <p>Худеем правильно!</p>
@@ -102,12 +92,14 @@
             <a href="#">Подробнее</a>
             <table>
               <tr>
-                <td>Без подзарядки</td>
+                <th>Без подзарядки</th>
+              </tr>
+              <tr>
                 <td>48 часов</td>
               </tr>
             </table>
           </li>
-          <li id="slide_3">
+          <li>
             <img src="#" width="526" height="334" alt="Квадрокоптер">
             <span>03</span>
             <p>Порхает как бабочка, жалит как пчела!</p>
@@ -115,24 +107,21 @@
             <a href="#">Подробнее</a>
             <table>
               <tr>
-                <td>Дальность полета</td>
-                <td>800 м</td>
+                <th>Дальность полета</th>
+                <th>Радиус поражения</th>
               </tr>
               <tr>
-                <td>Радиус поражения</td>
+                <td>800 м</td>
                 <td>50 м</td>
               </tr>
             </table>
           </li>
         </ul>
-        <div>
-          <input id="button_1" type="radio" name="slider_dots_item" checked>
-          <label for="button_1">Слайд 1</label>
-          <input id="button_2" type="radio" name="slider_dots_item">
-          <label for="button_2">Слайд 2</label>
-          <input id="button_3" type="radio" name="slider_dots_item">
-          <label for="button_3">Слайд 3</label>
-        </div>
+
+        <button type="button"></button>
+        <button type="button"></button>
+        <button type="button"></button>
+
       </section>
 
       <section>
@@ -172,14 +161,11 @@
             <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
           </li>
         </ul>
-        <div>
-          <input id="tab_slide_1" type="radio" name="tab_slider_item" checked>
-          <label for="tab_slide_1">Доставка</label>
-          <input id="tab_slide_2" type="radio" name="tab_slider_item">
-          <label for="tab_slide_2">Гарантия</label>
-          <input id="tab_slide_3" type="radio" name="tab_slider_item">
-          <label for="tab_slide_3">Кредит</label>
-        </div>
+
+        <button type="button">Доставка</button>
+        <button type="button">Гарантия</button>
+        <button type="button">Кредит</button>
+
       </section>
 
       <section>
