@@ -1,0 +1,409 @@
+/* Подключение шрифтов из локальной папки*/
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2"),
+    url("../fonts/gilroyextrabold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/gilroylight.woff2") format("woff2"),
+  url("../fonts/gilroylight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/opensans.woff2") format("woff2"),
+    url("../fonts/opensans.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/opensanslight.woff2") format("woff2"),
+  url("../fonts/opensanslight.woff") format("woff");
+}
+
+/* Определим кастомные свойства*/
+:root {
+  --basic-black: #000000;
+  --basic-extra-dark: #363636;
+  --basic-dark: #464646;
+  --basic-neutral: #7e7e7e;
+  --basic-extra-light: #e5e5e5;
+  --basic-white: #ffffff;
+
+  --additional-yellow: #f0c52e;
+  --additional-yellow-light: #f7e296;
+  --additional-green:#91c92f;
+  --white-opacity: rgba(255, 255, 255, 0.30);
+
+  --status-color: #f6dada;
+}
+
+/* описание для border-box */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Добавим общие стили для страницы*/
+body {
+  min-width: 1160px;
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Стилизация навигации по сайту*/
+.main-navigation {
+  background-color: var(--additional-yellow-light);
+}
+
+.main-header-logo:hover img,
+.main-header-logo:focus img {
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.logo:hover img,
+.logo:focus img {
+  opacity: 0.60;
+}
+
+.logo:active img {
+  opacity: 0.30;
+  border-style: none;
+}
+
+.search-input {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--basic-black);
+  background-color: var(--additional-yellow-light);
+}
+
+.search-input::placeholder {
+  opacity: 0.30;
+}
+
+.search-input:hover::placeholder,
+.search-input:focus::placeholder{
+  opacity: 0.60;
+}
+
+.search-button {
+  display: none;
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 20px;
+  color: var(--basic-black);
+  background-color: transparent;
+  border: 2px solid #000000;
+}
+
+.search-button:hover,
+.search-button:focus {
+  display: inline-block;
+  color: var(--basic-white);
+  background-color: var(--basic-black);
+}
+
+.search-button:active {
+  color: var(--white-opacity);
+}
+
+.search-input:focus + .search-button {
+  display: inline-block;
+}
+
+.user-navigation a {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--basic-black);
+}
+
+.user-navigation a:hover,
+.user-navigation a:focus  {
+  opacity: 0.60;
+}
+
+.user-navigation a:active {
+  opacity: 0.30;
+}
+
+.dropdown-list {
+  list-style: none;
+}
+
+.dropdown-list a {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--basic-black);
+}
+
+.site-navigation {
+  list-style: none;
+}
+
+.site-navigation a {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--basic-black);
+}
+
+.dropdown-list {
+  display: none;
+}
+
+.dropdown:hover .dropdown-list,
+.dropdown:focus .dropdown-list {
+  display: block;
+}
+
+.site-navigation li:hover,
+.site-navigation li:focus,
+.dropdown-list li:hover,
+.dropdown-list li:focus {
+  opacity: 0.60;
+}
+
+.site-navigation li:active,
+.dropdown-list li:active
+{
+  opacity: 0.30;
+}
+
+/* Слайдер*/
+.slider-item  {
+  display: none;
+}
+
+.slide-current {
+  display: block;
+}
+
+.slider-item h3 {
+  font-size: 47px;
+  line-height: 58px;
+}
+
+.slider-item p {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.slider-item span {
+  font-size: 179px;
+  line-height: 219px;
+  text-transform: uppercase;
+  color: var(--basic-white);
+}
+
+.common-link {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color:var(--basic-black);
+}
+
+.slider-link:active {
+  opacity: 0.30;
+}
+
+.slider-table th {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+}
+
+.slider-table td {
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.1em;
+}
+
+/* Популярные товары*/
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-list a {
+  letter-spacing: 0.05em;
+  color: var(--basic-black);
+}
+
+.catalog-list a:active {
+  opacity: 0.30;
+}
+
+/* Сервисы*/
+.service-list {
+  list-style: none;
+}
+
+.service-item {
+  display: none;
+}
+
+.service-item.current {
+  display: block;
+}
+
+.service-list h3 {
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+}
+
+.service-list p {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+
+.service-button {
+  font: inherit;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+}
+
+.service-button.current-button {
+  color: var(--additional-yellow-light);
+}
+
+/* Производители */
+.manufacturers-list {
+  list-style: none;
+}
+
+.manufacturers-list li {
+  filter:grayscale(1);
+  opacity: 0.20;
+}
+
+.manufacturers-list li:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* О компании */
+.about-company h3,
+.contacts-company h3 {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+}
+
+.about-company p,
+.contacts-company p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.delivery {
+  list-style: none;
+}
+
+.delivery li {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* Футер */
+.main-footer {
+  background-color: var(--basic-dark);
+}
+
+.user-navigation-footer a {
+ color: var(--basic-white);
+}
+.user-navigation-footer a {
+  opacity: 0.70;
+}
+
+.user-navigation-footer a:hover,
+.user-navigation-footer .a:focus  {
+  opacity: 1.00;
+}
+
+.user-navigation-footer a:active {
+  opacity: 0.30;
+}
+
+.footer-contacts p,
+.footer-phone {
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--basic-white);
+}
+
+.site-navigation-footer a {
+  color: var(--basic-white);
+}
+
+.social-icons {
+  list-style: none;
+}
+
+.social-button:hover .icon-path,
+.social-button:focus .icon-path {
+  fill-opacity: 0.60;
+}
+.social-button:active .icon-path {
+  fill-opacity: 0.10;
+}
+
+.footer-copyright:hover,
+.footer-copyright:focus {
+  opacity: 0.60;
+}
+
+.footer-copyright:active {
+  opacity: 0.30;
+}
+
