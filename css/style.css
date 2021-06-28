@@ -372,6 +372,10 @@ img {
   list-style: none;
 }
 
+.breadcrumbs a {
+  color: var(--basic-black);
+}
+
 .breadcrumbs li {
   font-size: 14px;
   line-height: 19px;
