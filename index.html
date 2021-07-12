@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicon/180.png">
+<!--    <link rel="manifest" href="manifest.webmanifest">-->
     <link rel="preload" href="fonts/opensans.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -38,34 +39,36 @@
             <ul class="site-navigation">
               <li class="dropdown">
                 <a href="">Каталог товаров</a>
-                <ul class="dropdown-list">
-                  <li>
-                    <a href="#">Виртуальная реальность</a>
-                  </li>
-                  <li>
-                    <a href="catalog.html">Моноподы для селфи</a>
-                  </li>
-                  <li>
-                    <a href="#">Экшн-камеры</a>
-                  </li>
-                  <li>
-                    <a href="#">Фитнес-браслеты</a>
-                  </li>
-                  <li>
-                    <a href="#">Умные часы</a>
-                  </li>
-                  <li>
-                    <a href="#">Квадрокоптер</a>
-                  </li>
-                </ul>
+                <div class="dropdown-wrapper">
+                  <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                      <a href="#">Виртуальная реальность</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="catalog.html">Моноподы для селфи</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Экшн-камеры</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Фитнес-браслеты</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Умные часы</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Квадрокоптер</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Доставка</a>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Гарантия</a>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Контакты</a>
               </li>
             </ul>
@@ -100,7 +103,7 @@
             </table>
           </li>
           <li class="slider-item">
-            <img class="slide-2-img" src="img/slider-2.png" width="345" height="485" alt="Фитнесс-браслет">
+            <img class="slide-2-img" src="img/slider-2.png" width="345" height="483" alt="Фитнесс-браслет">
             <span>02</span>
             <h3>Худеем<br>правильно!</h3>
             <p>Мотивирующие фитнес-браслеты помогут найти в себе силы<br>не пропускать занятия и соблюдать диету.</p>
@@ -273,13 +276,13 @@
           <h2 class="visually-hidden">Контакты и сервисы</h2>
           <p>Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
           <ul class="site-navigation-footer">
-            <li>
+            <li class="site-navigation-item">
               <a href="#">Доставка</a>
             </li>
-            <li>
+            <li class="site-navigation-item">
               <a href="#">Гарантия</a>
             </li>
-            <li>
+            <li class="site-navigation-item">
               <a href="#">Контакты</a>
             </li>
           </ul>

@@ -51,6 +51,9 @@
   --disabled-color: #a6a6a6;
   --pagination-color: #ebebeb;
   --pagination-push: #d9d9d9;
+  --filter-header: #dcdcdc;
+  --scale-color:#91c92f;
+  --toggle-center: #c4c4c4;
 }
 
 /* описание для border-box */
@@ -111,16 +114,19 @@ img {
   border: 1px solid #000000;
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  opacity: 0.60;
 }
 
 .logo:hover img,
 .logo:focus img {
   opacity: 0.60;
+  margin-bottom: -2px;
 }
 
-.logo:active img {
+.main-header-logo:active img {
   opacity: 0.30;
   border-style: none;
+  margin-bottom: 0;
 }
 
 .search-input {
@@ -206,10 +212,11 @@ img {
   grid-template-rows: repeat(3, min-content);
   row-gap: 20px;
   column-gap: 61px;
-
+  z-index: -1;
   margin: 0;
-  padding: 20px 0 34px 0;
-  width: 1100px;
+  padding: 20px 0 35px 60px;
+  width: 1160px;
+  left: -60px;
   background-color: var(--additional-yellow-light);
 
   list-style: none;
@@ -227,9 +234,18 @@ img {
   text-transform: none;
 }
 
-.dropdown:hover,
+.dropdown:hover .dropdown-list,
 .dropdown:focus {
   z-index: 10;
+}
+
+.dropdown-wrapper {
+  display: none;
+}
+
+.dropdown:hover .dropdown-wrapper,
+.dropdown:focus {
+  display: block;
 }
 
 .dropdown-list li {
@@ -260,18 +276,15 @@ img {
   grid-area: 1 / 3 / 2 / 4;
 }
 
-.site-navigation li:not(:first-child):hover,
-.site-navigation li:not(:first-child):focus,
-.site-navigation-footer li:hover,
-.site-navigation-footer li:focus,
-.dropdown-list li:hover,
-.dropdown-list li:focus {
+.site-navigation-item:hover a,
+.site-navigation-item:focus a,
+.dropdown-item:hover a,
+.dropdown-item:focus a {
   opacity: 0.60;
 }
 
-.site-navigation li:active,
-.site-navigation-footer li:active,
-.dropdown-list li:active
+.site-navigation-item:active a,
+.dropdown-item:active a
 {
   opacity: 0.30;
 }
@@ -406,9 +419,10 @@ img {
 
 /* Сервисы*/
 .service-list {
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .service-item {
@@ -499,6 +513,7 @@ img {
   font-weight: 800;
   font-size: 48px;
   line-height: 58px;
+  margin: 0;
 }
 
 /* breadcrumbs */
@@ -599,6 +614,7 @@ img {
 .item-description {
   font-family: Gilroy, Arial, sans-serif;
   letter-spacing: 0.05em;
+  margin: 0;
 }
 
 .item-description a {
@@ -606,12 +622,14 @@ img {
   font-size: 18px;
   line-height: 22px;
   color: var(--basic-black);
+  width: 270px;
 }
 
 .item-description span {
   font-weight: 300;
   font-size: 16px;
   line-height: 18px;
+  margin-left: auto;
 }
 
 .set-button {
@@ -662,14 +680,15 @@ img {
   background-color: var(--pagination-color);
 }
 
-.pagination-list {
-  list-style: none;
+.pagination {
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .pagination-button,
-.pagination-list a {
+.pagination a {
   font-family: Gilroy, Arial, sans-serif;
   font-weight: 800;
   font-size: 16px;
@@ -889,11 +908,11 @@ img {
   grid-template-areas:
     "filter sorting"
     "filter catalog";
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: min-content 2fr;
   grid-template-rows:
     70px
     1fr;
-  grid-gap: 40px;
+  grid-gap: 70px;
   min-height: 100vh;
 }
 
@@ -919,14 +938,15 @@ img {
     1fr
     70px;
   grid-gap: 40px;
+  padding-bottom: 78px;
 }
 
 .catalog-results {
   grid-area: catalog;
 }
 
-.pagination-list {
-  grid-area: pagination;
+.pagination {
+  grid-area: pagination-block;
 }
 
 .catalog-items-list {
@@ -1235,4 +1255,337 @@ img {
 
 .pseudo {
   margin-right: 115px;
+}
+
+.catalog-nav {
+  margin-bottom: 50px;
+}
+
+.catalog-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 44px 0 50px 60px;
+}
+
+.catalog-top h1 {
+  margin-bottom: 36px;
+}
+
+.breadcrumbs {
+  display: flex;
+}
+
+.breadcrumbs li:not(:last-child) {
+  margin-right: 40px;
+}
+
+.filters {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 328px;
+
+  background-color: var(--basic-extra-light);
+}
+
+.filters h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 328px;
+  width: 100vw;
+  height: 70px;
+  background-color: var(--filter-header);
+}
+
+.filters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100%;
+  background-color: var(--basic-extra-light);
+}
+
+.filters h2 {
+  position: relative;
+
+  width: 328px;
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 60px;
+
+  background-color: var(--filter-header);
+}
+
+.sorting {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.sorting::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70px;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100%;
+
+  background-color: var(--basic-extra-light);
+}
+
+.sorting h2 {
+  margin: 0 74px 0 0 ;
+}
+
+.sorting .buttons {
+  margin-left: auto;
+}
+
+.sorting-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 18px 4px 0;
+
+  list-style-type: none;
+}
+
+.sorting-list li:not(:last-child) {
+  margin-right: 28px;
+}
+
+/* Фильтр общие*/
+.filter-form {
+  width: 270px;
+  padding-top: 70px;
+  padding-left: 60px;
+}
+
+.filter-item-wrap {
+  position: relative;
+}
+
+.filter-item-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1px;
+
+  width: 200px;
+  height: 2px;
+
+  background-color: var(--basic-black);
+}
+
+.filter-item {
+  width: 202px;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.filter-item legend {
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 30px;
+
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: 0.01em;
+}
+
+/* Фильтр по цене*/
+.filter-range {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+}
+
+.filter-controls {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+
+.filter-scale {
+  height: 2px;
+
+  background-color: var(--basic-black);
+  opacity: 0.20;
+}
+
+.filter-bar {
+  width: 62%;
+  height: 2px;
+
+  background-color: var(--scale-color);
+}
+
+.filter-toggle {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--toggle-center);
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.filter-toggle:active {
+  width: 22px;
+  height: 22px;
+}
+
+.filter-toggle-min {
+  top: -10px;
+  left: -4px;
+}
+
+.filter-toggle-max {
+  top: -10px;
+  left: 109px;
+}
+
+.label-filters {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: rgba(0, 0, 0, 0.2);
+  letter-spacing: 0;
+}
+
+.label-filters-min {
+  flex-grow: 1;
+  margin-right: 18px;
+}
+
+.label-filters-max {
+  flex-grow: 1;
+}
+
+.input-filters {
+  width: 50px;
+  margin: 0;
+  padding: 0;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: rgba(0, 0, 0, 0.2);
+  letter-spacing: 0;
+
+  background: none;
+  border: 0;
+}
+
+/* Фильтр по цветам */
+.checkbox-list {
+  margin: 0;
+  padding: 0 0 31px 0;
+
+  list-style: none;
+}
+
+.checkbox-item {
+  padding-left: 39px;
+}
+
+/* Фильтр bluetooth*/
+.filter-radio-list {
+  margin: 0;
+  padding: 0 0 50px 0;
+
+  list-style: none;
+}
+
+.filter-radio-item {
+  padding-left: 39px;
+}
+
+/* Карточки в каталоге */
+.catalog-item {
+  position: relative;
+}
+
+.set-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 360px;
+  height: 380px;
+  padding-top: 169px;
+  padding-right: 90px;
+  padding-left: 90px;
+
+  text-align: center;
+
+  background-color: rgba(238, 238, 238, 0.7);
+}
+
+.catalog-item:hover .set-button {
+  display: block;
+}
+
+.item-description {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 8px;
+}
+
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.pagination-button {
+  padding: 25px 30px;
+}
+
+.pagination-backward {
+  margin-right: auto;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.pagination-list li:not(:last-child) {
+  margin-right: 30px;
 }
