@@ -911,7 +911,7 @@ img {
   grid-template-columns: min-content 2fr;
   grid-template-rows:
     70px
-    1fr;
+    min-content;
   grid-gap: 70px;
   min-height: 100vh;
 }
