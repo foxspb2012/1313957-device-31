@@ -24,17 +24,20 @@
         <div class="navigation-wrapper catalog-nav">
           <div class="user-row">
             <form class="main-search" name="search" method="post" action="https://echo.htmlacademy.ru">
-              <input class="search-input" type="search" name="searching" placeholder="Поиск по сайту">
+              <input class="search-input" id="search" type="search" name="searching" placeholder="Поиск по сайту">
               <button class="search-button" type="submit">Найти</button>
+              <label class="search-label" for="search">
+                <span class="visually-hidden">Поиск</span>
+              </label>
             </form>
 
           <div class="user-navigation">
-              <div>
-                <a href="#">Валентин Петухов</a>
+              <div class="user-entries">
+                <a class="user-login" href="#">Валентин Петухов</a>
                 <a class="user-navigation-exit" href="#">Выйти</a>
               </div>
-              <a href="#">Сравнить</a>
-              <a href="#">Корзина</a>
+              <a class="user-chart" href="#">Сравнить</a>
+              <a class="user-cart" href="#">Корзина</a>
             </div>
           </div>
 
@@ -97,7 +100,6 @@
           </li>
         </ul>
       </div>
-
 
       <div class="catalog-page">
         <section class="filters">
