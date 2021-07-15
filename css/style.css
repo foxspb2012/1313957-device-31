@@ -116,6 +116,7 @@ body {
   background-color: var(--basic-white);
   background-repeat: no-repeat;
   background-position: center top;
+  overflow-x: hidden;
 }
 
 /* служебный класс visually-hidden*/
@@ -1010,7 +1011,7 @@ img {
   width: 1440px;
   min-width: 1160px;
   margin: 0 auto;
-  padding: 0 140px;
+  padding: 0 20px;
 }
 
 /* Популярные товары*/
