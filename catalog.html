@@ -17,9 +17,11 @@
 
     <header class="main-header container">
       <nav class="main-navigation">
-        <a class="main-header-logo logo" href="index.html">
-          <img src="img/logo.svg" width="163" height="35" alt="Логотип магазина Девайс">
-        </a>
+        <div class="main-header-logo logo">
+          <a href="index.html">
+            <img src="img/logo.svg" width="163" height="35" alt="Логотип магазина Девайс">
+          </a>
+        </div>
 
         <div class="navigation-wrapper catalog-nav">
           <div class="user-row">
@@ -68,13 +70,13 @@
                   </ul>
                 </div>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Доставка</a>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Гарантия</a>
               </li>
-              <li>
+              <li class="site-navigation-item">
                 <a href="">Контакты</a>
               </li>
             </ul>
@@ -89,7 +91,7 @@
         <h1 class="catalog-header">Моноподы для селфи</h1>
 
         <ul class="breadcrumbs">
-          <li>
+          <li class="breadcrumbs-item">
             <a href="index.html">Главная</a>
           </li>
           <li>
@@ -113,8 +115,14 @@
                     <div class="filter-scale">
                       <div class="filter-bar"></div>
                     </div>
-                    <div class="filter-toggle  filter-toggle-min" aria-label="Флаг установки минимальной цены"></div>
-                    <div class="filter-toggle  filter-toggle-max" aria-label="Флаг установки максимальной цены"></div>
+                    <div>
+                      <h3 class="visually-hidden">Флаг установки минимальной цены</h3>
+                      <div class="filter-toggle filter-toggle-min"></div>
+                    </div>
+                   <div>
+                     <h3 class="visually-hidden">Флаг установки максимальной цены</h3>
+                     <div class="filter-toggle filter-toggle-max"></div>
+                   </div>
                   </div>
                   <div class="filter-price">
                     <label class="label-filters label-filters-min">от
@@ -132,23 +140,23 @@
                 <legend class="legend-header">Цвет</legend>
                 <ul class="checkbox-list">
                   <li class="checkbox-item">
-                    <input class="custom-checkbox" type="checkbox" id="colour_black" name="colour" value="black" checked>
+                    <input class="input-checkbox visually-hidden" type="checkbox" id="colour_black" name="colour" value="black" checked>
                     <label class="label-checkbox" for="colour_black">Черный</label>
                   </li>
                   <li class="checkbox-item">
-                    <input class="custom-checkbox" type="checkbox" id="colour_white" name="colour" value="white">
+                    <input class="input-checkbox visually-hidden" type="checkbox" id="colour_white" name="colour" value="white">
                     <label class="label-checkbox" for="colour_white">Белый</label>
                   </li>
                   <li class="checkbox-item">
-                    <input class="custom-checkbox" type="checkbox" id="colour_blue" name="colour" value="blue" checked>
+                    <input class="input-checkbox visually-hidden" type="checkbox" id="colour_blue" name="colour" value="blue" checked>
                     <label class="label-checkbox" for="colour_blue">Синий</label>
                   </li>
                   <li class="checkbox-item">
-                    <input class="custom-checkbox" type="checkbox" id="colour_red" name="colour" value="red" checked>
+                    <input class="input-checkbox visually-hidden" type="checkbox" id="colour_red" name="colour" value="red" checked>
                     <label class="label-checkbox" for="colour_red">Красный</label>
                   </li>
                   <li class="checkbox-item">
-                    <input class="custom-checkbox" type="checkbox" id="colour_pink" name="colour" value="pink">
+                    <input class="input-checkbox visually-hidden" type="checkbox" id="colour_pink" name="colour" value="pink">
                     <label class="label-checkbox" for="colour_pink">Черный</label>
                   </li>
                 </ul>
@@ -159,11 +167,11 @@
                 <legend class="legend-header">Bluetooth</legend>
                 <ul class="filter-radio-list">
                   <li class="filter-radio-item">
-                    <input class="custom-radio" type="radio" id="with_bth" name="bluetooth" value="have_bth" checked>
+                    <input class="input-radio visually-hidden" type="radio" id="with_bth" name="bluetooth" value="have_bth" checked>
                     <label class="label-radio" for="with_bth">Есть</label>
                   </li>
                   <li class="filter-radio-item">
-                    <input class="custom-radio" type="radio" id="no_bth" name="bluetooth" value="no_bth">
+                    <input class="input-radio visually-hidden" type="radio" id="no_bth" name="bluetooth" value="no_bth">
                     <label class="label-radio" for="no_bth">Нет</label>
                   </li>
                 </ul>
@@ -178,21 +186,29 @@
           <h2 class="section-header">Сортировка:</h2>
           <ul class="sorting-list">
             <li class="sort-item sort-current">
-              <input class="custom-sorting" type="radio" id="by_price" name="sorting-select" value="price" checked>
+              <input class="custom-sorting visually-hidden" type="radio" id="by_price" name="sorting-select" value="price" checked>
               <label class="label-sorting" for="by_price">По цене</label>
             </li>
             <li class="sort-item">
-              <input class="custom-sorting" type="radio" id="by_type" name="sorting-select" value="type">
+              <input class="custom-sorting visually-hidden" type="radio" id="by_type" name="sorting-select" value="type">
               <label class="label-sorting" for="by_type">По типу</label>
             </li>
             <li class="sort-item">
-              <input class="custom-sorting" type="radio" id="by_popular" name="sorting-select" value="popular">
+              <input class="custom-sorting visually-hidden" type="radio" id="by_popular" name="sorting-select" value="popular">
               <label class="label-sorting" for="by_popular">По популярности</label>
             </li>
           </ul>
-          <div class="buttons">
-            <button class="sorting-button" type="button"></button>
-            <button class="sorting-button button-selected" type="button"></button>
+          <div class="sorting-buttons">
+            <button class="button-up" type="button" aria-label="Сортировка по возрастанию">
+              <svg class="button-path" width="11" height="10" viewBox="0 0 11 10">
+                <path d="M0 10H11L5.5 0L0 10Z"/>
+              </svg>
+            </button>
+            <button class="button-down button-selected" type="button" aria-label="Сортировка по убыванию">
+              <svg class="button-path" width="18" height="18" viewBox="0 0 18 18">
+                <path  d="M14 4L3 4L8.5 14L14 4Z"/>
+              </svg>
+            </button>
           </div>
         </section>
 
@@ -202,6 +218,7 @@
             <ul class="catalog-items-list">
               <li class="catalog-item">
                 <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
+                <span class="item-new">NEW</span>
                 <p class="item-description">
                   <a href="#">Любительская селфи-палка</a>
                   <span>1 100 руб.</span>
@@ -213,6 +230,7 @@
               </li>
               <li class="catalog-item">
                 <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
+                <span class="item-new">NEW</span>
                 <p class="item-description">
                   <a href="#">Профессиональная<br>селфи-палка</a>
                   <span>1 500 руб.</span>
@@ -224,6 +242,7 @@
               </li>
               <li class="catalog-item">
                 <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
+                <span class="item-new">NEW</span>
                 <p class="item-description">
                   <a href="#">Непотопляемая<br>селфи-палка</a>
                   <span>1 500 руб.</span>
@@ -235,6 +254,7 @@
               </li>
               <li class="catalog-item">
                 <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
+                <span class="item-new  item-new-active">NEW</span>
                 <p class="item-description">
                   <a href="#">Селфи-палка «Следуй за мной»</a>
                   <span>1 900 руб.</span>
@@ -283,12 +303,12 @@
             <img class="footer" src="img/logo-footer.svg" width="163" height="35" alt="Логотип магазина Девайс">
           </a>
           <div class="user-navigation user-navigation-footer">
-            <div>
-              <a href="#">Валентин Петухов</a>
+            <div class="user-entries">
+              <a class="user-login-footer" href="#">Валентин Петухов</a>
               <a class="user-navigation-exit" href="#">Выйти</a>
             </div>
-            <a href="#">Сравнить</a>
-            <a href="#">Корзина</a>
+            <a class="user-chart-footer" href="#">Сравнить</a>
+            <a class="user-cart-footer" href="#">Корзина</a>
           </div>
         </div>
         <div class="footer-contacts">
