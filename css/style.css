@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* Подключение шрифтов из локальной папки*/
 @font-face {
   font-family: Gilroy;
@@ -615,8 +622,8 @@ img {
 .slider-list {
   margin: -10px 0 0 0;
   padding: 0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(28%, var(--additional-yellow-light)), color-stop(28%, var(--basic-white)), color-stop(72%, var(--basic-white)));
   background: -o-linear-gradient(top, var(--additional-yellow-light) 28%, var(--basic-white) 28%, var(--basic-white) 72%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(28%, var(--additional-yellow-light)), color-stop(28%, var(--basic-white)), color-stop(72%, var(--basic-white)));
   background: linear-gradient(to bottom, var(--additional-yellow-light) 28%, var(--basic-white) 28%, var(--basic-white) 72%);
 
   list-style: none;
@@ -1196,6 +1203,10 @@ img {
   color: var(--basic-white);
 }
 
+.footer-phone {
+  margin-left: auto;
+}
+
 .site-navigation-footer a {
   color: var(--basic-white);
 }
@@ -1406,8 +1417,9 @@ img {
   "main-header"
   "main-content"
   "footer";
-  -ms-grid-rows: min-content 1fr min-content;
+  -ms-grid-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+  -ms-grid-rows: min-content 1fr min-content;
   grid-template-rows: min-content 1fr min-content;
 }
 
@@ -1441,10 +1453,13 @@ img {
   grid-template-columns: min-content 2fr;
   -ms-grid-rows:
     70px 70px
-    min-content;
+    -webkit-min-content;
   grid-template-rows:
     70px
     -webkit-min-content;
+  -ms-grid-rows:
+    70px 70px
+    min-content;
   grid-template-rows:
     70px
     min-content;
@@ -1486,11 +1501,14 @@ img {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   -ms-grid-rows:
-    min-content 40px
-    min-content;
+    -webkit-min-content 40px
+    -webkit-min-content;
   grid-template-rows:
     -webkit-min-content
     -webkit-min-content;
+  -ms-grid-rows:
+    min-content 40px
+    min-content;
   grid-template-rows:
     min-content
     min-content;
@@ -1698,8 +1716,8 @@ img {
 .services-wrapper {
   width: 100%;
   height: 403px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(28%, var(--basic-white)), color-stop(28%, var(--basic-extra-light)), color-stop(72%, var(--basic-extra-light)));
   background: -o-linear-gradient(top, var(--basic-white) 28%, var(--basic-extra-light) 28%, var(--basic-extra-light) 72%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(28%, var(--basic-white)), color-stop(28%, var(--basic-extra-light)), color-stop(72%, var(--basic-extra-light)));
   background: linear-gradient(to bottom, var(--basic-white) 28%, var(--basic-extra-light) 28%, var(--basic-extra-light) 72%);
   margin-bottom: 90px;
 }
@@ -1910,18 +1928,25 @@ img {
   margin: 0 156px 0 0;
 }
 
-.site-navigation-footer li:not(:last-child) {
+.site-navigation-footer li {
   margin-right: 36px;
+}
+
+.site-navigation-footer li:nth-child(3n) {
+  margin-right: 0;
 }
 
 .site-navigation-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 435px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-right: auto;
+  /*  margin-right: auto;*/
 }
 
 .footer-social {
